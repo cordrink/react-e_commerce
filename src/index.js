@@ -13,13 +13,14 @@ import ShoppingCart from "./Pages/ShopppingCart/ShoppingCart";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
-        <Routes path="/" element={<App/>}>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/produits" element={<Products/>}/>
-            <Route path="/produits/:id" element={<ProductShowcase/>}/>
-            <Route path="/contact" element={<Contact/>}/>
-            <Route path="/shoppingcart" element={<ShoppingCart />} />
+        <Routes>
+            <Route path="/" element={<App/>}>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/produits" element={<Products/>}/>
+                <Route path="/produits/:id" element={<ProductShowcase/>}/>
+                <Route path="/contact" element={<Contact/>}/>
+                <Route path="/shoppingcart" element={<ShoppingCart/>}/>
+            </Route>
         </Routes>
-
     </BrowserRouter>
 );
