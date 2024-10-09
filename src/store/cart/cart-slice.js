@@ -3,7 +3,15 @@ import {createSlice} from "@reduxjs/toolkit";
 export const cartSlice = createSlice({
     name: "cart",
     initialState: {
-        cart: []
+        cart: [
+            /*{
+                title: "Mug Coding Fuel",
+                price: 14.99,
+                img: "codingfuel",
+                quantity: 1
+                id: uuidv4(),
+            },*/
+        ]
     },
     reducers : {
         addItem: (state, action) => {
@@ -26,7 +34,13 @@ export const cartSlice = createSlice({
             }
             console.log(state.cart);
         },
-        updateItem: (state, action) => {},
+        updateItem: (state, action) => {
+            const indexItem = state.cart.findIndex(obj => obj.id === action.payload.id);
+
+            const newArr = [...state.cart];
+            newArr.splice(indexItem, 1, action.payload);
+            state.cart = newArr;
+        },
     }
 })
 
